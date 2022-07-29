@@ -17,11 +17,34 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   
+   if(testInput === "") {
+    return "Empty";
+   }
+    if(isNaN(testInput) === true) {
+    return "Not a Number";
+   } else if(isNaN(testInput) === false) {
+    return "Is a Number";
+   }
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
+
+        
+
+        if(pilot === "" || copilot === "" || fuelLevel=== "" || cargoMass === "") {
+            alert("All fields are required!");
+        }
+
+        if(validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
+            alert("Enter valid inputs in each field.");
+        }
+
+        if(validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
+            alert("Enter valid inputs in each field.");
+        }
+
+        
+
 }
 
 async function myFetch() {
